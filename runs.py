@@ -8,7 +8,7 @@ import torch
 
 from torch.utils.data import DataLoader
 
-from models import KGEModel, ModE, HAKE, CirE, HypE, HypBallE
+from models import KGEModel, ModE, HAKE, CirE, HypE, KEEN
 
 from data import TrainDataset, BatchType, ModeType, DataReader
 from data import BidirectionalOneShotIterator
@@ -168,8 +168,8 @@ def main(args):
         kge_model = CirE(num_entity, num_relation, args.hidden_dim, args.gamma)
     elif args.model == 'HypE':
         kge_model = HypE(num_entity, num_relation, args.hidden_dim, args.gamma)
-    elif args.model == 'HypBallE':
-        kge_model = HypBallE(num_entity, num_relation, args.hidden_dim, args.gamma)
+    elif args.model == 'KEEN':
+        kge_model = KEEN(num_entity, num_relation, args.hidden_dim, args.gamma)
 
     logging.info('Model Parameter Configuration:')
     for name, param in kge_model.named_parameters():

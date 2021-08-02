@@ -789,9 +789,9 @@ class HypE(KGEModel):
         # return self.gamma.item() - (torch.norm(head - rel, p=1, dim=2) + torch.norm(tail - rel, p=1, dim=2) - torch.norm(head - tail, p=1, dim=2))
 
 
-class HypBallE(KGEModel):
+class KEEN(KGEModel):
     def __init__(self, num_entity, num_relation, hidden_dim, gamma):
-        super(HypBallE, self).__init__()
+        super(KEEN, self).__init__()
         self.num_entity = num_entity
         self.num_relation = num_relation
         self.hidden_dim = hidden_dim
